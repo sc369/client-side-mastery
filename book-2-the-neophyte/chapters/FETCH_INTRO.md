@@ -53,6 +53,27 @@ As you continue to talk, you find out that a previous software developer was hir
 
 First, you are going to perform a [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) operation to retrieve all the foods from the API. You look in the red folder to find out the URL of API that the last developer set up.
 
+### Set up the API
+
+1. Create a `chesterfield-food-bank` directory in your workspace.
+1. Then create an `api` sub-directory under that.
+1. Create a `foods.json` file in the `api` directory.
+1. Open the `chesterfield-food-bank` directory in Visual Studio Code.
+1. Copy the contents of the [foods.json](./data/foods.json) file into yours.
+1. Open another terminal windows and navigation to the `chesterfield-food-bank/api` directory.
+1. Start your API with `json-server -w foods.json`
+
+### Set up the Application
+
+1. Create a `chesterfield-food-bank/src/scripts` directory
+1. Create a `chesterfield-food-bank/src/styles` directory
+1. Create an `index.html` file in `src`
+1. Create a `foodbank.js` file in `src/scripts`
+1. Create a `foodbank.css` file in `src/styles`
+
+
+![commands to set up the application](./images/chesterfield.svg)
+
 
 Paste the following code into your `foodapi.js` JavaScript file and refresh your browser. Remember, **always have your DevTools open**.
 
