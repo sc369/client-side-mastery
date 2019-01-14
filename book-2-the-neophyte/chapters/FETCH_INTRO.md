@@ -74,43 +74,42 @@ First, you are going to perform a [GET](https://developer.mozilla.org/en-US/docs
 
 ![commands to set up the application](./images/chesterfield.svg)
 
-
-Paste the following code into your `foodapi.js` JavaScript file and refresh your browser. Remember, **always have your DevTools open**.
+Paste the following code into your `foodbank.js` JavaScript file and refresh your browser. Remember, **always have your DevTools open**.
 
 > food-api/src/scripts/foodapi.js
 
 ```js
-fetch("http://localhost:8088/food")
-    .then(foods => foods.json())
-    .then(parsedFoods => {
-        console.table(parsedFoods)
+fetch("http://localhost:3000/foods")
+    .then(res => res.json())
+    .then(foods => {
+        console.table(foods)
     })
 ```
 
 You should see this in your console.
 
-![food API response](./images/foodapi-response.png)
+![food API response](./images/all-foods-table.png)
 
 Time to explore the code line by line.
 
 ### The Request
 
 ```js
-fetch("http://localhost:8088/food")
+fetch("http://localhost:8088/foods")
 ```
 
 This makes a request to a specific domain, port address, and resource on the Web.
 
 1. `localhost` is the domain
 1. `8088` is the port address
-1. `food` is the resource
+1. `foods` is the resource
 
 By default, `fetch` performs a GET operation, so it requires no other configuration.
 
 ### The Parsing
 
 ```js
-.then(foods => foods.json())
+.then(res => res.json())
 ```
 
 This line of code accepts the response from your request, parses the body of the response as JSON and returns it to any subsequent `then()` method.
@@ -118,8 +117,8 @@ This line of code accepts the response from your request, parses the body of the
 ### Using the Response
 
 ```js
-.then(parsedFoods => {
-    console.table(parsedFoods)
+.then(foods => {
+    console.table(foods)
 })
 ```
 
